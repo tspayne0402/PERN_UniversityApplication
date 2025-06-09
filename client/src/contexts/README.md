@@ -1,0 +1,1 @@
+For state management logic (React context API or global state stores).

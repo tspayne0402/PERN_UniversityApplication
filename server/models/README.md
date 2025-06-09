@@ -1,0 +1,1 @@
+Defines the database schemas using Mongoose. Each collection (Course, ATARData) will have a corresponding model file.

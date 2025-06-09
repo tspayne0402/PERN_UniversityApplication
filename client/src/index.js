@@ -1,0 +1,1 @@
+// Entry point for the react application. Renders the App component into the DOM

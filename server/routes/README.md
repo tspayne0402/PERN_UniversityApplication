@@ -1,0 +1,1 @@
+Contains the API route definitions. Typically there's a sub-folder within routes and individual files for each resource.

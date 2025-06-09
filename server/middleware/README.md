@@ -1,0 +1,1 @@
+Custom express middleware functions (authentication, error handling and logging)
