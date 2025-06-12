@@ -1,0 +1,1 @@
+Holds the request handlers for API routes. Controllers are responsible for processing incoming requests, interacting with services or models, and sending responses.

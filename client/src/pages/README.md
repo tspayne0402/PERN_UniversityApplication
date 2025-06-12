@@ -1,1 +1,0 @@
-Contains top level components that represent different pages or views of the application.

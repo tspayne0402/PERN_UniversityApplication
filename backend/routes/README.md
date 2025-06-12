@@ -1,0 +1,1 @@
+Defines the API endpoints and maps them to the appropriate controller functions.
