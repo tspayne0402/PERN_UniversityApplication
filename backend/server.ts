@@ -1,14 +1,16 @@
 // This is the main entry point for the backend application and is where the Express server is initialised and configured.
 
-const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
-const morgan = require('morgan');
+import express, { Application, Request, Response, NextFunction } from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import morgan from 'morgan';
+import dotenv from 'dotenv';
 
 
-require('dotenv').config(); // Loads environment variables
+dotenv.config(); // Loads environment variables
 
-const app = express();
+const app: Application = express();
+const PORT: number = Number(process.env.PORT ?? 5000);
 
 // Enable CORS for all routes. Allows for the controlled sharing of resources between different web pages.
 app.use(cors());
@@ -25,8 +27,16 @@ app.get('/', (req, res) => {
     res.json({ message: 'University & Career Navigator API is running!' });
 });
 
-const PORT: number = Number(process.env.PORT ?? 5000);
+// TODO: Add other API routes.
+
+// Error handler
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+    console.error(err.stack);
+    res.status(500).json({ error: 'Something went wrong!' });
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://${PORT}`);
-})
+});
+
+export default app;
